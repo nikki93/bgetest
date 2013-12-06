@@ -9,7 +9,7 @@ class Player:
     def __init__(self, obj, cont):
         self.obj = obj
 
-        self.sprite = [o for o in obj.children if 'Spr' in o.name][0]
+        self.sprite = self.findChild(lambda o: 'Spr' in o.name)
         self.animations = {
                 'walk': [['PlayerWalkR', 0, 1, 2], 7],
                 'idle': [['PlayerWalkR', 0], 1]
